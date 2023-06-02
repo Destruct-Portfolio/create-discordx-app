@@ -1,0 +1,36 @@
+{
+  "name": "create-discordx-app",
+  "version": "1.0.0",
+  "description": "A boilerplate script for generating Discord.js+Discordx applications.",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "create-discordx-app": "./generate-app.js"
+  },
+  "scripts": {
+    "prestart": "rimraf dist/ && tsc",
+    "start": "node dist/index.js",
+    "forge:single-command": "copyfiles -f ./templates/commands/single.ts ./src/commands/ && renamer --silent ./src/commands/* --find single.ts --replace" 
+  },
+  "dependencies": {
+    "@discordx/importer": "^1.2.2",
+    "@types/node": "^20.1.2",
+    "copyfiles": "^2.4.1",
+    "discord.js": "^14.11.0",
+    "discordx": "^11.7.6",
+    "dotenv": "^16.0.3",
+    "reflect-metadata": "^0.1.13",
+    "renamer": "^4.0.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4"
+  },
+  "keywords": [
+    "discord",
+    "boilerplate",
+    "discordx",
+    "discord.js",
+    "typescript"
+  ],
+  "author": "abderraouf-belalia",
+  "license": "ISC"
+}
