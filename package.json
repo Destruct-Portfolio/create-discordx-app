@@ -5,12 +5,14 @@
   "main": "dist/index.js",
   "type": "module",
   "bin": {
-    "create-discordx-app": "./generate-app.js"
+    "create-discordx-app": "./bin/generate-app.js"
   },
   "scripts": {
     "prestart": "rimraf dist/ && tsc",
     "start": "node dist/index.js",
-    "forge:single-command": "copyfiles -f ./templates/commands/single.ts ./src/commands/ && renamer --silent ./src/commands/* --find single.ts --replace" 
+    "forge:single-command": "copyfiles -f ./templates/commands/single.ts ./src/commands/ && renamer --silent ./src/commands/* --find single.ts --replace",
+    "forge:group-command": "copyfiles -f ./templates/commands/group.ts ./src/commands/ && renamer --silent ./src/commands/* --find group.ts --replace",
+    "forge:simple-event": "copyfiles -f ./templates/events/single.ts ./src/commands/ && renamer --silent ./src/commands/* --find single.ts --replace"
   },
   "dependencies": {
     "@discordx/importer": "^1.2.2",
